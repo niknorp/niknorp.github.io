@@ -1,0 +1,396 @@
+body {
+    background-color:#fff;
+    padding:10px;
+}
+
+/* Grid-areas */
+.container {
+    display:grid;
+    max-width:1145px;
+    grid-gap:20px;
+    margin: 10px auto;
+    grid-template-columns: minmax(140px 1fr) 4fr;
+    grid-template-areas:
+        "sidebar slider"
+        "sidebar sliderButtom"
+        "sidebar blogs"
+        "footer footer"
+    ;
+}
+.sidebar {
+    grid-area: sidebar;
+    display:inline-block;
+}
+.slider{
+    grid-area:slider;
+    display:inline-block;
+    height:445px;
+}
+.sliderButtom {
+    grid-area: sliderButtom;
+}
+.blogs {
+    grid-area:blogs;
+    display:inline-block;
+    vertical-align:top;
+    height:290px;
+    width:900px;
+}
+.footer {
+    grid-area:footer;
+    position:relative;
+    top:50px;
+}
+.logo {
+    text-align:center;
+    cursor:pointer;
+}
+a {
+    text-decoration:none;
+    color:DarkTurquoise;
+}
+/* Таблица в сайдбаре*/
+.chapters {
+    display:block;
+    vertical-align:middle;
+    text-align:center;
+}
+.chapters2 {
+    display:none;
+}
+.chapter{
+    display:inline-block;
+    width: 100%;
+    margin:2px 0px;
+    vertical-align:middle;
+    color:DarkTurquoise;
+    cursor:pointer;
+}
+.chapter div {
+    display:inline-block;
+    vertical-align:top;
+    position:relative;
+    top:10px;
+}
+.chapter:hover {
+    color: red;
+}
+.chapter:hover img{
+    transform: translateX(5px);
+    transition: ease 0.5s;
+}
+.chapter>td {
+    padding-right:5px;
+}
+/* Надпись на слайдере */
+.devise {
+    display:inline-block;
+    border:0px solid #fff;
+    position:relative;
+    top:-82px;
+}
+.row1 {
+    background-color:#fff;
+    padding:10px;
+    font-size:28px;
+    font-style:italic;
+    font-weight:300px;
+}
+.row2 {
+    background-color:black;
+    padding:10px;
+    font-size:24px;
+    color:#fff;
+    font-style:italic;
+    font-weight:300px;
+}
+.devise:hover {
+    opacity: 0.9;
+    transition: ease 2s;
+}
+/*Меню под слайдером*/
+.narrow {
+    display:none;
+
+}
+ul {
+    position:relative;
+    top: -20px;
+    right: 38px; ;
+    margin:0;
+}
+li {
+    display: inline-grid;
+    border-right:1px solid DarkTurquoise;
+    width:223px;
+    height:85px;
+    padding:0px;
+    text-align:center;
+    vertical-align:middle;
+    background-color:LightCyan;
+    margin-left:-3px;
+    margin-right:0px;
+    font-family: Georgia, serif;
+    font-size:14px;
+    line-height: 16px;
+    color:DarkTurquoise;
+    text-shadow: 1px 1px white;
+    cursor: pointer;
+}
+li:nth-child(4){
+    border-right:0px;
+    margin-right:-20px;
+}
+li p {
+    font-size:18px;
+    line-height: 20px;
+    margin-bottom:-30px;
+}
+li:hover {
+    color:firebrick;
+    transition: ease 1s;
+}
+/* 4 колонки под слайдером */
+.blog {
+    display:inline-block;
+    width:205px;
+    margin-right:20px;
+}
+.blogs:nth-child(4) {
+    margin-right:0px;
+}
+.blog img {
+    border-radius:5px
+
+}
+.blog img:hover {
+    opacity:0.8;
+    transition: ease 1s;
+}
+/* Футер */
+.footer p {
+    display:inline-block;
+    color:DarkTurquoise;
+    cursor:pointer;
+}
+
+/* Экраны */
+
+@media (min-width:930px) and (max-width: 1180px) {
+    .slider img {
+        width: 697px;
+        height:75%;
+    }
+    ul {
+        top: -130px;
+    }
+    li {
+        width:173px;
+        height:85px;
+        font-size:12px;
+        line-height: 14px;
+    }
+    .blogs {
+        position:relative;
+        top:-50px;
+        width:750px;
+    }
+    .blog {
+        width: 155px;
+        margin-right: 10px;
+        text-align:center;
+    }
+    .blog img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+@media (max-width:929px)  {
+    .container {
+        width:700px;
+        grid-template-areas: "sidebar" "slider" "sliderButtom" "blogs" "footer";
+        margin:0px auto;
+    }
+    .sidebar {
+        margin:0px 5px;
+    }
+    .logo {
+        text-align:left;
+        display:inline-block;
+        margin-right:100px;
+    }
+    .chapters {
+        display:none;
+    }
+    .chapters2 {
+        display:inline-block;
+        position:relative;
+        top:-55px;
+        vertical-align:middle;
+        text-align:center;
+        width:400px;
+        margin:0 auto;
+    }
+    .chapter{
+        display:inline-block;
+        width: auto;
+        margin:2px 5px;
+        vertical-align:middle;
+        color:DarkTurquoise;
+        text-align:center;
+    }
+    .chapter:hover img{
+        transform: translateY(5px);
+        transition: ease 0.5s;
+    }
+    .slider {
+        width:700px;
+        height:auto;
+        margin:0px;
+    }
+    .slider img {
+        width:100%;
+        height:100%;
+        margin:0px;
+    }
+    .wide {
+        display:none
+    }
+    .narrow {
+        display:inline-block;
+        position:relative;
+        top:-123px;
+        width:700px;
+        margin:0px;
+    }
+    li {
+        width: 174px;
+        height: 45px;
+    }
+    li:nth-child(4){
+        border-right:0px;
+        margin-right:-20px;
+    }
+    .blogs {
+        width:700px;
+        position:relative;
+        top:-50px;
+        text-align:center;
+    }
+    .blog {
+        width:150px;
+    }
+    .blog img {
+        width:100%;
+        height:auto;
+
+    }
+}
+@media (max-width:750px) {
+    .container {
+        width:550px;
+    }
+    .logo {
+        margin-right:30px;
+    }
+    .slider {
+        width:550px;
+    }
+    .row1 {
+        font-size:22px;
+    }
+    .row2 {
+        font-size:18px;
+    }
+    .narrow {
+        top:-110px;
+        width:550px;
+    }
+    li {
+        width:136px;
+    }
+    .blogs {
+        width:550px;
+        top:-50px;
+    }
+    .blog {
+        display:inline-block;
+        width:45%;
+        height:auto;
+        margin-bottom:20px;
+    }
+    .footer {
+        position:relative;
+        top:300px;
+        text-align:center;
+    }
+}
+@media (max-width:570px) {
+    .container {
+        width:318px;
+    }
+    .sidebar {
+        width:310px;
+    }
+    .logo {
+        margin-right:10px;
+        width:auto;
+    }
+    .chapters2 {
+        top: -90px;
+        left:120px;
+        width:250px;
+        margin:0 5px;
+    }
+    .chapter{
+        width: auto;
+        margin:0px 0px;
+    }
+    .chapter img {
+        display:none;
+    }
+    .slider {
+        width:94%;
+    }
+    .devise {
+        left: -2px;
+        top:-42px;
+        padding:5px;
+    }
+    .row1 {
+        font-size:16px;
+    }
+    .row2 {
+        font-size:12px;
+    }
+    .narrow {
+        top:-85px;
+        width:310px;
+    }
+    li {
+        width:81px;
+        height:25px;
+    }
+    li p {
+        font-size:10px;
+        line-height: 12px;
+        margin-bottom:-30px;
+    }
+    .blogs {
+        width:310px;
+        top:-30px;
+    }
+    .blog {
+        display:inline-block;
+        width:85%;
+        height:auto;
+    }
+    .footer {
+        position:relative;
+        top:820px;
+        text-align:center;
+    }
+}
+
+
